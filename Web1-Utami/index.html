@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, intial-scale=1, shrink-to-fit=no">
+  <title>Web Homework Utami</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="main.php">
+
+</head>
+<body>
+
+<div class="form-structor">
+	<form class="form" action="main.php" method="post">
+		<div class="signup">
+			<h2 class="form-title" id="signup"><span>or</span>Sign Up</h2>
+			<div class="form-holder">
+				<input class="input" type="text" name="username" placeholder="Username"/>
+				<input class="input" type="email" name="email" placeholder="E-mail "/>
+				<input class="input" type="password" name="password" placeholder="Password"/>
+				<p>
+					&ensp; Gender: 
+					<input name="gender" type="radio" value="Male">Male
+					<input name="gender" type="radio" value="Female">Female
+				</p>
+				<p>
+					&ensp; Favorite Color: <input type="color" class="input" name="color" />
+				</p>
+			</div>
+			<button class="submit-btn" type="submit" name="SignUp">Sign Up</button>
+		</div>
+	</form>
+	<form class="form" action="main.php" method="post">
+		<div class="login slide-up">
+			<div class="center">
+				<h2 class="form-title" id="login"><span>or</span>Login</h2>
+				<div class="form-holder">
+					<input type="text" class="input" name="username" placeholder="Username" />
+					<input type="password" class="input" name="password" placeholder="Password" />
+				</div>
+				<button class="submit-btn" type="submit" name="Login">Login</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+  <script  src="./script.js"></script>
+
+</body>
+</html>
