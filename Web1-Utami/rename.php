@@ -40,7 +40,6 @@
             <input type ="text" name="new_name" >
             Old file name :
             <input type ="text" name="old_name" value=<?php echo "$old_name"; ?> >
-
             <input type ="submit" class="btn btn-info" value="Submit">
              <a href="home.php" class="btn btn-info">Cancel </a>
         </form>

@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 $username = $_SESSION["username"];
 $mysqli = new mysqli('localhost','root','Nyuna','web') or die(mysqli_error($mysqli));
 

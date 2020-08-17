@@ -11,8 +11,7 @@
             if($result->num_rows > 0){  
                 while($row = $result->fetch_assoc()){
                     if($username == $row["username"]){
-
-                        echo "<script>alert(The account already exist!)</script>";
+                        echo "<script>alert('The account already exist!')</script>";
                         header("refresh:0;url=index.html");
                         exit();  
                     }     
@@ -68,7 +67,7 @@
             die('Error: ' . mysqli_error());
         }
         else{
-            echo "Your sign up success!";
+            echo "<script>alert('Your sign up success!')</script>";
             $_SESSION['username'] = $username;
             header("refresh:0;url=home.php");
         }
@@ -89,12 +88,13 @@
                 exit();
             }
             else{
-                echo "<script>alert('Incorrect username/password, or your account didn't registered.')</script>";
+                echo"<script>alert('Incorrect username/password, or maybe your account not registered yet.')</script>";
+               
                 header("refresh:0;url=index.html");
             }
         }
         else{
-            echo "<script>alert('you didn't enter anything')</script>";
+            echo "<script>alert('You are not enter anything')</script>";
             header("refresh:0;url=index.html");
             
         }
