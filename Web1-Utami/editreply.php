@@ -15,18 +15,14 @@
         mysqli_query($con,"SET NAMES UTF-8");
         session_start();
         $username = $_SESSION['username']  ; 
-        
-           
-        $answer = $_GET['answer'];
-        
-        
-        $re=mysqli_query($con,"SELECT * FROM reply WHERE answer='$answer'")or die("can't connect".mysqli_error());
+        $id = $_GET['idr'];
+        $re=mysqli_query($con,"SELECT * FROM reply WHERE idr='$id'")or die("can't connect".mysqli_error());
         if($row = mysqli_fetch_array($re)) {
             if($row[username] != $username) {     
-               
-                echo "<script>alert('This is not you, you cannot edit')</script>";
-                header("refresh:0;url=boardmsg.php");
-            }
+                 echo $username.$row[username];
+                 echo "<script>alert('This is not you, you cannot edit')</script>";
+                 header("refresh:0;url=boardmsg.php");
+             }
         }              
     }
 ?>
@@ -53,13 +49,13 @@
     <p class="pull-right">Edit message as  <?php echo $username; ?></p>
 	<h4>Edit message</h4>
     <form action="updatereply.php" method="post">
-        <textarea name="msg" class="form-control" >
+        <textarea name="pesan" class="form-control" >
             <?php     
-                $re=mysqli_query($con,"SELECT * FROM reply WHERE answer=\"".$answer."\"")or die("can't connect".mysqli_error());
+                $re=mysqli_query($con,"SELECT * FROM reply WHERE idr='$id'")or die("can't connect".mysqli_error());
                 if($row = mysqli_fetch_array($re)) {
                     if($row[username] == $username) {     
                         echo  $row[answer];
-                        $_SESSION['answerr'] = $row[answer];
+                        $_SESSION['idrr'] = $row[idr];
                     } 
                 } 
                    

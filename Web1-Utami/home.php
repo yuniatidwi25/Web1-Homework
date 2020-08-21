@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, intial-scale=1, shrink-to-fit=no">
         <title>File Home Page</title>
     	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -39,24 +39,18 @@
 		transform: translateY(-80%);
 	}
 	.btn{
-		font-size: 13px;
-		color: white;
-		padding: 12px 14px;
+		font-size: 15px;
+		color: black;
+		padding: 12px 16px;
 		border: 2px solid #FFF;
     }
-    .btn2{
-		font-size: 12px;
-		color: white;
-        padding: 5px 9px;
-		border: 2px solid #FFF;
-    }
+    
 	
 </style>
 		
     </head>
 	<body background="https://www.sharepointshepherd.com/wp/wp-content/uploads/2015/10/background-clouds-med.jpg">
 	<!--Header-->
-	
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,10 +60,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
       <ul class="navbar-nav mr-auto navbar-right">
-        <li class="nav-item active">
+        <li class="nav-item active ">
           <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item ">
           <a class="nav-link" href="info.php">Account Information</a>
         </li>
 		<li class="nav-item">
@@ -77,6 +71,9 @@
         </li>
 		<li class="nav-item">
           <a class="nav-link" href="boardmsg.php">Board Message</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="subscribe.php">Subscribe</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -91,12 +88,10 @@
             </div>
       </ul>
    </div>
-</nav>
-
-              
-       
-	<div class="container">
-      <center>  <h2 > Home Page / Upload Files </h2> 
+</nav> 
+<div class="container">   
+       <center> 
+       <h2 > Home Page / Upload Files </h2> 
        <table class="table" style="border-top-style: hidden">
             <tbody>
                 <tr>
@@ -111,7 +106,7 @@
             </tbody>
         </table>
        <br>
-        <table class="table table-bordered" >
+        <table class="table">
             <tr  bgcolor="#abd7eb"  >
                 <th>No.</th>
                 <th>File Name</th>
@@ -161,6 +156,6 @@
                 ?>
       
         </table> 
-	</div>
+        </div>     
 	</body>
 </html>

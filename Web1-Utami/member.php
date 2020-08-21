@@ -85,11 +85,14 @@
         <li class="nav-item ">
           <a class="nav-link" href="info.php">Account Information</a>
         </li>
-		<li class="nav-item active">
+		    <li class="nav-item active">
           <a class="nav-link" href="member.php">All Member Information</a>
         </li>
-		<li class="nav-item">
+		    <li class="nav-item">
           <a class="nav-link" href="boardmsg.php">Board Message</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="subscribe.php">Subscribe</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -105,12 +108,13 @@
       </ul>
    </div>
 </nav>
-</head>
  
-    <div class="container">
+<div class="container">   
      <center><h1>All Member Information  </h1></center/>
+     
      <center><table class="table table-bordered" ></center/>
       <tr bgcolor='#abd7eb'>
+	  	<th>No.</th>
         <th>Username</th>
         <th>Gender</th>
 		<th>E-mail</th>
@@ -120,9 +124,11 @@
       
     <?php
         while($row = mysqli_fetch_array($rows)){
-			
+			$i=0;
+			$i++;
     ?>        
           <tr>
+			<td><?php echo $i;?></td>
             <td><?php echo $row['username']?></td>
             <td><?php echo $row['gender']?></td>
 			<td><?php echo $row['email']?></td>
@@ -134,7 +140,8 @@
         
     ?>
     </table>
-</div>
+
     <p>&nbsp;</p>
+	</div>
 </body>
 </html>

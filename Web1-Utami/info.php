@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, intial-scale=1, shrink-to-fit=no" >
+<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1, shrink-to-fit=no">
         <title>Account Information</title>
-        
     	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -12,15 +12,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<style>
-body{
-	font-size: 13px;
-}
-
-.form-control{
-	font-size: 13px;
-}
-.navbar{
+        <style>
+	.navbar{
 		margin-bottom: 0;
 		border-radius: 0;
 		background-color: #abd7eb ;
@@ -46,15 +39,17 @@ body{
 		transform: translateY(-80%);
 	}
 	.btn{
-		font-size: 13px;
+		font-size: 15px;
 		color: black;
-		padding: 6px 5px;
-		border: 1px solid #FFF;
+		padding: 12px 16px;
+		border: 2px solid #FFF;
     }
+    
+	
 </style>
-
-</head>
-<body background="https://www.sharepointshepherd.com/wp/wp-content/uploads/2015/10/background-clouds-med.jpg">
+		
+    </head>
+	<body background="https://www.sharepointshepherd.com/wp/wp-content/uploads/2015/10/background-clouds-med.jpg">
 	<!--Header-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -77,6 +72,9 @@ body{
 		<li class="nav-item">
           <a class="nav-link" href="boardmsg.php">Board Message</a>
         </li>
+		<li class="nav-item">
+          <a class="nav-link" href="subscribe.php">Subscribe</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <?php
@@ -91,8 +89,8 @@ body{
       </ul>
    </div>
 </nav>
-<div class="container">
-    <center> <h1>Account Information  </h1>
+<center>
+    <h1>Account Information  </h1>
 	<?php require_once 'editinfo.php'; ?>
 	
 	<?php 
@@ -110,7 +108,7 @@ body{
 		endif
 	?>
 
-	
+	<div class="container">
 	<?php
 		$mysqli = new mysqli('localhost','root','Nyuna','web') or die (mysqli_error($mysqli));
 		$result = $mysqli->query("SELECT * FROM akun") or die($mysqli->error());
@@ -157,7 +155,7 @@ body{
 			<input type="hidden" name="id" value="<?php echo $id;?>">
 			<div >
 				<label>Username :</label>
-				<input  type="text" name="username" class="form-control"  value="<?php echo $username;?>">
+				<input readonly  type="text" name="username" class="form-control"  value="<?php echo $username;?>">
 			</div>
 			<div class="form-group">
 				<label>Password :</label>
@@ -180,7 +178,7 @@ body{
 			
 			<div class="form-group">
 				<label>Email :</label>
-				<input type="text" name="email" class="form-control" value="<?php echo $email; ?>">
+				<input type="email" name="email" class="form-control" value="<?php echo $email; ?>">
 			</div>
 			<div class="form-group">
 				<?php
