@@ -37,7 +37,7 @@
         if($row['subscribe'])
         {
             $sub = true;
-            $title = "Thank you for your subscribtion!";
+            $title = "Thank you for your subscription!";
         }
         else
         {
@@ -46,15 +46,18 @@
     }
     $show_video = '';
     $show_button = '';
+    $show_buton_unsub = '';
     if($sub == true)
     {
         $show_video='';
         $show_button='style="display: none;"';
+        $show_button_unsub = '';
     }
     else
     {
         $show_video='style="display: none;"';
         $show_button='';
+        $show_button_unsub = 'style="display: none;"';
     }
 
 ?>
@@ -65,6 +68,7 @@
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, intial-scale=1, shrink-to-fit=no">
         <title>Subscribe Page</title>
+        <link rel="icon" type="image/svg" href="https://d29fhpw069ctt2.cloudfront.net/icon/image/38476/preview.svg">
     	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -158,6 +162,13 @@
                 <td align="center">
                     <form action="subscribeupdate.php" method="post">
                         <input type ="submit" class="btn btn-info" value="Subscribe"></input>
+                    </form>
+                </td>
+            </tr>
+            <tr <?php echo $show_button_unsub;?>>
+                <td align="center">
+                    <form action="unsubscribeupdate.php" method="post">
+                        <input type ="submit" class="btn btn-info" value="Unsubscribe"></input>
                     </form>
                 </td>
             </tr>
